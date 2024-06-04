@@ -2,9 +2,11 @@ homepage: "https://github.com/mtechraw/consent-mode-gtm"
 documentation: "https://github.com/mtechraw/consent-mode-gtm/blob/main/README.md"
 versions:
   # Latest version
+  - sha: 7afeb2c5f74d263bc014ebd5f5c54e6e31fc0a4a 
+    changeNotes: Update Apache License details and copyright information. Add appendix on how to apply the license to your work.
+  # Older versions
   - sha: b54a41a4d26b683242b51d05c50d8ddec0fc1556
     changeNotes: update template with all test cases and added more EU region.
-  # Older versions
   - sha: 0791d889c7917aa88977f1452abdea58108a5ebe
     changeNotes: Add multiple new regions to the eeaRegions array.
   - sha: b9edd04774b8ece6411005061249521260cd4fd4
