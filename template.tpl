@@ -394,7 +394,27 @@ const eeaRegions = [
   "SE",
   "NO",
   "IS",
-  "LI"
+  "LI",
+  "AL",
+  "AD",
+  "AM",
+  "BY",
+  "BA",
+  "FO",
+  "GE",
+  "GI",
+  "IS",
+  "IM",
+  "XK",
+  "LI",
+  "MK",
+  "MD",
+  "MC",
+  "ME",
+  "CH",
+  "TR",
+  "UA",
+  "VA"
 ];
 
 const regions = data.regions || data.regionsEEA;
