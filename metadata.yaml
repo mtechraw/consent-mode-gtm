@@ -2,9 +2,11 @@ homepage: "https://github.com/mtechraw/consent-mode-gtm"
 documentation: "https://github.com/mtechraw/consent-mode-gtm/blob/main/README.md"
 versions:
   # Latest version
+  - sha: 0791d889c7917aa88977f1452abdea58108a5ebe
+    changeNotes: Add multiple new regions to the eeaRegions array.
+  # Older versions
   - sha: b9edd04774b8ece6411005061249521260cd4fd4
     changeNotes: Add latest version details to metadata.yaml
-  # Older versions
   - sha: c04c4ead8450d805c90e8f049458da978726059e
     changeNotes: Update README with Consent Mode details and add metadata.yaml
   - sha: 430c646fc8325f4c249a74e44edae540450c8b5e
