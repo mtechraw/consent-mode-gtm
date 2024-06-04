@@ -1,0 +1,10 @@
+homepage: "https://github.com/mtechraw/consent-mode-gtm"
+documentation: "https://github.com/mtechraw/consent-mode-gtm/blob/main/README.md"
+versions:
+  # Latest version
+  
+  # Older versions
+  - sha: 430c646fc8325f4c249a74e44edae540450c8b5e
+    changeNotes: Create README.md
+  - sha: 17153553579d232c875c15f92b4532948ba549b8
+    changeNotes: intial commit
