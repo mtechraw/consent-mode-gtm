@@ -11,6 +11,7 @@ ___INFO___
 {
   "type": "TAG",
   "id": "cvt_temp_public_id",
+  "categories": ["AFFILIATE_MARKETING", "ADVERTISING", "ANALYTICS", "CONVERSIONS", "MARKETING", "PERSONALIZATION", "REMARKETING"],
   "version": 1,
   "securityGroups": [],
   "displayName": "Consent Mode GTM - Skillonnet",
