@@ -359,7 +359,8 @@ const eeaRegions = [
   "CH",
   "TR",
   "UA",
-  "VA"
+  "VA",
+  "BR"
 ];
 
 const regions = data.regions || data.regionsEEA;
