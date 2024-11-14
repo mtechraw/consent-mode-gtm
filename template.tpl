@@ -360,7 +360,8 @@ const eeaRegions = [
   "TR",
   "UA",
   "VA",
-  "BR"
+  "BR",
+  "GB"
 ];
 
 const regions = data.regions || data.regionsEEA;
