@@ -2,9 +2,11 @@ homepage: "https://github.com/mtechraw/consent-mode-gtm"
 documentation: "https://github.com/mtechraw/consent-mode-gtm/blob/main/README.md"
 versions:
   # Latest version
+  - sha: fc4183f4c225832ea6e97c67e93e5fadb917343e 
+    changeNotes: Added GB to EEA country
+  # Older versions
   - sha: 71c31e7982de7b7c9d59c1fef6b93434dc76ade7 
     changeNotes: Add BR to eeaRegions array
-  # Older versions
   - sha: b122b3ad383cf8696c5c9607a7358f67cc31ea37 
     changeNotes: updated wait_for_update to 300 ms
   - sha: 8cb6278e0fb8b1a8ac51eb045a11e65bd708e9d9 
