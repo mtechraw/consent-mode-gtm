@@ -870,4 +870,26 @@ ___NOTES___
 
 Created on 6/4/2024, 12:45:27 PM
 
+// === TCF 2.2 Consent Logic ===
+// TCF 2.2 Consent Handling for Google Consent Mode
+data.gtag('consent', 'default', {
+  ad_storage: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});
 
+if (typeof __tcfapi === 'function') {
+  __tcfapi('addEventListener', 2, function(tcData, success) {
+    if (success && (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete')) {
+      const adStorage = tcData.purpose.consents[1] ? 'granted' : 'denied';
+      const analyticsStorage = tcData.purpose.consents[7] ? 'granted' : 'denied';
+
+      data.gtag('consent', 'update', {
+        ad_storage: adStorage,
+        analytics_storage: analyticsStorage
+      });
+    }
+  });
+} else {
+  logToConsole('__tcfapi is not available. TCF 2.2 may not be properly initialized.');
+}
