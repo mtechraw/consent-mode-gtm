@@ -2,9 +2,11 @@ homepage: "https://github.com/mtechraw/consent-mode-gtm"
 documentation: "https://github.com/mtechraw/consent-mode-gtm/blob/main/README.md"
 versions:
   # Latest version
+  - sha: f3fbe20ebe9875dcdef2939189bc6660b00edae3
+    changeNotes: Configures default consent and updates parameters for Google Consent Mode. Adds new regions to the eeaRegions array and updates the template with all test cases.
+  # Older versions
   - sha: 8246e6d12a468ef70581baf8914c4b111c8dc98c 
     changeNotes: AAdd TCF 2.2 Consent Logic for Google Consent Mode
-  # Older versions
   - sha: fc4183f4c225832ea6e97c67e93e5fadb917343e 
     changeNotes: Added GB to EEA country
   - sha: 71c31e7982de7b7c9d59c1fef6b93434dc76ade7 
