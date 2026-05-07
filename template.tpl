@@ -228,7 +228,7 @@ ___TEMPLATE_PARAMETERS___
               }
             ],
             "simpleValueType": true,
-            "defaultValue": "granted"
+            "defaultValue": "denied"
           },
           {
             "type": "SELECT",
@@ -246,7 +246,7 @@ ___TEMPLATE_PARAMETERS___
               }
             ],
             "simpleValueType": true,
-            "defaultValue": "granted"
+            "defaultValue": "denied"
           },
           {
             "type": "SELECT",
@@ -278,19 +278,19 @@ ___TEMPLATE_PARAMETERS___
     "subParams": [
       {
         "type": "CHECKBOX",
-        "name": "checkbox2",
+        "name": "url_passthrough",
         "checkboxText": "Pass Ad Click Information Through URLs (url_passthrough)",
         "simpleValueType": true
       },
       {
         "type": "CHECKBOX",
-        "name": "checkbox3",
+        "name": "ads_data_redaction",
         "checkboxText": "Redact Ads Data (ads_data_redaction)",
         "simpleValueType": true
       },
       {
         "type": "CHECKBOX",
-        "name": "checkbox4",
+        "name": "sendDataLayer",
         "checkboxText": "Push dataLayer Event",
         "simpleValueType": true
       }
@@ -303,9 +303,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 const dataLayerPush = require('createQueue')('dataLayer');
 const gtagSet = require('gtagSet');
-const log = require('logToConsole');
 const makeNumber = require('makeNumber');
-const makeTableMap = require('makeTableMap');
 const setDefaultConsentState = require('setDefaultConsentState');
 const updateConsentState = require('updateConsentState');
 
@@ -348,10 +346,8 @@ const eeaRegions = [
   "FO",
   "GE",
   "GI",
-  "IS",
   "IM",
   "XK",
-  "LI",
   "MK",
   "MD",
   "MC",
@@ -396,14 +392,14 @@ if (data.command === 'default' && regions !== 'all') {
   settingsObject.region = setRegions;
 }
   
+// Establish the consent state.
+consentApi(settingsObject);
+
 // Configure advanced settings.
 gtagSet({
   url_passthrough: data.url_passthrough || false,
   ads_data_redaction: data.ads_data_redaction || false
 });
-
-// Establish the consent state.
-consentApi(settingsObject);
 
 // Push to dataLayer if necessary
 if (data.sendDataLayer) {
@@ -869,27 +865,3 @@ setup: |-
 ___NOTES___
 
 Created on 6/4/2024, 12:45:27 PM
-
-// === TCF 2.2 Consent Logic ===
-// TCF 2.2 Consent Handling for Google Consent Mode
-data.gtag('consent', 'default', {
-  ad_storage: 'denied',
-  analytics_storage: 'denied',
-  wait_for_update: 500
-});
-
-if (typeof __tcfapi === 'function') {
-  __tcfapi('addEventListener', 2, function(tcData, success) {
-    if (success && (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete')) {
-      const adStorage = tcData.purpose.consents[1] ? 'granted' : 'denied';
-      const analyticsStorage = tcData.purpose.consents[7] ? 'granted' : 'denied';
-
-      data.gtag('consent', 'update', {
-        ad_storage: adStorage,
-        analytics_storage: analyticsStorage
-      });
-    }
-  });
-} else {
-  logToConsole('__tcfapi is not available. TCF 2.2 may not be properly initialized.');
-}
